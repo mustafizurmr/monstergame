@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Monster Attack</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/gif/png" href="resources/img/monster-hand2.png">
+	<link rel="stylesheet" href="index.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+
+<div id="app" class="gap container">
+	<div class="row">
+
+		<h2 class="text-center">Welcome to monster game</h2>
+		<div class="row">
+
+			<div class="monster gap col-md-6 col-xs-6">
+				<h2 class="text-center">You</h2>
+				<div class="healthbar">
+					<div class="healthbar text-center" style="background-color: green; margin: auto":style="{width: playerhealth + '%'}">
+						{{ playerhealth }}
+					</div>
+				</div>
+			</div >
+
+			<div class="monster gap col-md-6 col-xs-6">
+				<h2 class="text-center">Monster</h2>
+				<div class="healthbar">
+					<div class="healthbar text-center" style="background-color: green ; margin: auto":style="{width: monsterhealth + '%'}">
+						{{ monsterhealth }}
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row controls" v-if="!runningGame">
+			<div class="gap text-center">
+				<button class="btn btn-info" @click="startgame">Start New Game</button>
+				<br>
+			</div>
+		</div>
+
+		<div class="row controls" v-if="runningGame">
+			<div class="gap text-center">
+				<button class="btn btn-danger" @click="attack">Attack</button>
+				<button class="btn btn-danger" @click="spAttack">Special Attack</button>
+				<button class="btn btn-success"@click="heal">Heal</button>
+				<button class="btn btn-default" @click="giveUP">Give Up</button>
+			</div>
+		</div>
+
+	</div>
+
+</div>
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.1/vue.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<script src="monster.js"></script>
+
+
+
+</body>
+
+</html>
